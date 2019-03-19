@@ -1,5 +1,35 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
+
 public class StringUtils {
 
+    public static int duplicateCount(String text) {
+        List<Character> textCharacters = new ArrayList<>();
+        for (char c : text.toLowerCase().toCharArray()) {
+
+           textCharacters.add(c);
+}
+        textCharacters.removeIf(c -> (text.toLowerCase().lastIndexOf(c) == text.toLowerCase().indexOf(c)));
+                return Math.toIntExact(textCharacters.stream().distinct().count());
+                }
+
+private static Map<Character, Long> charFrequenciesMap(final String text) {
+        return text.codePoints()
+        .map(Character::toLowerCase)
+        .mapToObj(c -> (char) c)
+        .collect(groupingBy(identity(), counting()));
+        }
+
+static int duplicateCountOptimal(final String text) {
+        return (int) charFrequenciesMap(text).values().stream()
+        .filter(i -> i > 1)
+        .count();
+        }
     //My Answer
     public static boolean isIsogram(String input) {
         input = input.toLowerCase();
