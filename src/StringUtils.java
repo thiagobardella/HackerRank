@@ -10,26 +10,26 @@ public class StringUtils {
 
     public static int duplicateCount(String text) {
         List<Character> textCharacters = new ArrayList<>();
-        for (char c : text.toLowerCase().toCharArray()) {
-
+        String textLowCase = text.toLowerCase();
+        for (char c : textLowCase.toCharArray()) {
            textCharacters.add(c);
-}
-        textCharacters.removeIf(c -> (text.toLowerCase().lastIndexOf(c) == text.toLowerCase().indexOf(c)));
-                return Math.toIntExact(textCharacters.stream().distinct().count());
-                }
+        }
+        textCharacters.removeIf(c -> (textLowCase.lastIndexOf(c) == textLowCase.indexOf(c)));
+        return Math.toIntExact(textCharacters.stream().distinct().count());
+    }
 
-private static Map<Character, Long> charFrequenciesMap(final String text) {
+    private static Map<Character, Long> charFrequenciesMap(final String text) {
         return text.codePoints()
         .map(Character::toLowerCase)
         .mapToObj(c -> (char) c)
         .collect(groupingBy(identity(), counting()));
-        }
+    }
 
-static int duplicateCountOptimal(final String text) {
+    static int duplicateCountOptimal(final String text) {
         return (int) charFrequenciesMap(text).values().stream()
         .filter(i -> i > 1)
         .count();
-        }
+    }
     //My Answer
     public static boolean isIsogram(String input) {
         input = input.toLowerCase();
