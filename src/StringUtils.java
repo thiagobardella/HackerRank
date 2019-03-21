@@ -30,6 +30,26 @@ public class StringUtils {
         .filter(i -> i > 1)
         .count();
     }
+
+    //My Answer
+    public static boolean getXO(String str) {
+        Map<Character, Long> mapOfXO = str.toLowerCase()
+                .codePoints()
+                .mapToObj(c -> (char)c)
+                .filter(c-> c=='x' || c=='o')
+                .collect(groupingBy(identity(), counting()));
+
+        return mapOfXO.isEmpty() ||
+                (mapOfXO.size() == 2 && (mapOfXO.values().stream().distinct().count() == 1));
+    }
+
+    //Best Answer
+    public static boolean getXOBest (String str) {
+        str = str.toLowerCase();
+        return str.replace("o","").length() == str.replace("x","").length();
+    }
+
+
     //My Answer
     public static boolean isIsogram(String input) {
         input = input.toLowerCase();
