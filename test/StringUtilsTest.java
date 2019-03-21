@@ -45,5 +45,11 @@ public class StringUtilsTest{
         assertEquals(3, StringUtils.duplicateCount(test));
     }
 
+    @Test
+    public void findMissingLetters() {
+        assertEquals('e', StringUtils.findMissingLetter(new char[] { 'a','b','c','d','f' }));
+        assertEquals('P', StringUtils.findMissingLetter(new char[] { 'O','Q','R','S' }));
+    }
+
 
 }

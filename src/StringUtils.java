@@ -30,6 +30,16 @@ public class StringUtils {
         .filter(i -> i > 1)
         .count();
     }
+
+    //My Answer is the best answer
+    public static char findMissingLetter(char[] array) {
+        if (array.length < 2) return ' ';
+        for (int i = 0; i < array.length; i++) {
+            if (array[i+1] != array[i]+1) return (char)(array[i]+1);
+        }
+        return ' ';
+    }
+
     //My Answer
     public static boolean isIsogram(String input) {
         input = input.toLowerCase();
