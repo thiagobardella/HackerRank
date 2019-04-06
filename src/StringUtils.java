@@ -1,12 +1,21 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
 public class StringUtils {
+
+    public static int digital_root(int n) {
+        String nStr = String.valueOf(n);
+        nStr.codePoints().mapToObj(String::valueOf).mapToInt(Integer::parseInt).forEach(System.out::println);//sum();
+        int sum  = 0;
+        if (sum < 10) return sum;
+        else return digital_root(sum);
+    }
 
     public static int duplicateCount(String text) {
         List<Character> textCharacters = new ArrayList<>();

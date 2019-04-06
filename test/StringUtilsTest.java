@@ -45,5 +45,10 @@ public class StringUtilsTest{
         assertEquals(3, StringUtils.duplicateCount(test));
     }
 
+    @Test
+    public void digitalRoot() {
+        assertEquals(2, StringUtils.digital_root(11));
+    }
+
 
 }
