@@ -1,5 +1,12 @@
-import static org.junit.Assert.*;
+package hackerRank;
 
-public class ChessboardTest {
+import org.junit.Test;
+
+public class ChessboardTest extends Chessboard {
+
+    @Test
+    public void x() {
+
+    }
 
 }
