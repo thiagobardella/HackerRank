@@ -13,6 +13,14 @@ https://www.codewars.com/kata/5be1a950d2055d589500005b
 
 https://www.codewars.com/kata/59d0ee709f0cbcf65400003b
 
+* Meeting
+
+https://www.codewars.com/kata/meeting?utm_source=newsletter&utm_medium=email&utm_campaign=weekly_coding_challenges&utm_term=2019-06-25
+
 * Scaling Squared Strings
 
 https://www.codewars.com/kata/56ed20a2c4e5d69155000301
+
+* Set alarm
+
+https://www.codewars.com/kata/l1-set-alarm?utm_source=newsletter&utm_medium=email&utm_campaign=weekly_coding_challenges&utm_term=2019-06-25
