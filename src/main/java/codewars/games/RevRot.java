@@ -13,12 +13,16 @@ public class RevRot {
 
         List<String> strngAsList = Arrays.asList(strng.split(""));
 
-        return IntStream.range(0, strng.length()/sz - 1)
-                 .mapToObj(start -> strngAsList.subList(start*sz, sz))
+        return IntStream.range(0, strng.length()/sz)
+                 .mapToObj(start -> {
+                     int fromIndex = start * sz;
+                     int toIndex = fromIndex + sz;
+                     return strngAsList.subList(fromIndex, toIndex);
+                 })
                  .map(chunk -> {
-                     if (sumDigitsCubes(chunk)/2 == 0) {
+                     if (sumDigitsCubes(chunk)%2 == 0) {
                          StringBuilder stringBuilder = new StringBuilder();
-                         stringBuilder.append(chunk).reverse();
+                         stringBuilder.append(String.join("", chunk)).reverse();
                          return stringBuilder.toString();
                      }
                      return rotateLeft(1, chunk);
