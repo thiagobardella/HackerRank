@@ -13,6 +13,14 @@ https://www.codewars.com/kata/5be1a950d2055d589500005b
 
 https://www.codewars.com/kata/59d0ee709f0cbcf65400003b
 
+* Diamonds
+
+https://www.codewars.com/kata/5503013e34137eeeaa001648
+
+* Find the parity outlier
+
+https://www.codewars.com/kata/5526fc09a1bbd946250002dc
+
 * Meeting
 
 https://www.codewars.com/kata/meeting?utm_source=newsletter&utm_medium=email&utm_campaign=weekly_coding_challenges&utm_term=2019-06-25
