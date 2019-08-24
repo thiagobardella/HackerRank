@@ -24,21 +24,17 @@ public class BullsAndCows {
         String secretNumberStr = String.valueOf(secretNumber);
         String guessNumberStr = String.valueOf(n);
 
-        bulls = secretNumberStr.chars().mapToObj(i -> (char)i)
-                                        .filter(c -> secretNumberStr.indexOf(c) == guessNumberStr.indexOf(c))
-                                        .collect(Collectors.toList())
-                                        .size();
+        bulls = (int) secretNumberStr.chars().mapToObj(i -> (char) i)
+                .filter(c -> secretNumberStr.indexOf(c) == guessNumberStr.indexOf(c)).count();
 
         if (bulls == 4) {
             setAlreadyWinner(true);
             return "You win!";
         }
 
-        cows = guessNumberStr.chars().mapToObj(i -> (char)i)
-                                        .filter(c -> secretNumberStr.contains(String.valueOf(c)) &&
-                                                (secretNumberStr.indexOf(c) != guessNumberStr.indexOf(c)))
-                                        .collect(Collectors.toList())
-                                        .size();
+        cows = (int) guessNumberStr.chars().mapToObj(i -> (char) i)
+                .filter(c -> secretNumberStr.contains(String.valueOf(c)) &&
+                        (secretNumberStr.indexOf(c) != guessNumberStr.indexOf(c))).count();
 
         String bullPrint = bulls != 1 ? "bulls" : "bull";
         String cowPrint = cows != 1 ? "cows" : "cow";

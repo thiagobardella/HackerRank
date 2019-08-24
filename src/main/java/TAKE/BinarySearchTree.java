@@ -10,7 +10,6 @@ package TAKE;
             this.right = right;
         }
 
-
     }
 
     public class BinarySearchTree {
